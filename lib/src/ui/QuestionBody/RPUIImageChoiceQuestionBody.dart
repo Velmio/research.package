@@ -12,7 +12,8 @@ class RPUIImageChoiceQuestionBody extends StatefulWidget {
 }
 
 class _RPUIImageChoiceQuestionBodyState
-    extends State<RPUIImageChoiceQuestionBody> with AutomaticKeepAliveClientMixin<RPUIImageChoiceQuestionBody> {
+    extends State<RPUIImageChoiceQuestionBody>
+    with AutomaticKeepAliveClientMixin<RPUIImageChoiceQuestionBody> {
   String _errorMessage;
   RPImageChoice _selectedItem;
 
@@ -62,7 +63,9 @@ class _RPUIImageChoiceQuestionBodyState
               borderRadius:
                   BorderRadius.all(Radius.circular(5 * 25 / items.length)),
               border: Border.all(
-                color: _selectedItem == item ? Colors.blue : Colors.transparent,
+                color: _selectedItem == item
+                    ? Theme.of(context).accentColor
+                    : Colors.transparent,
                 width: 3,
               ),
             ),
@@ -70,13 +73,13 @@ class _RPUIImageChoiceQuestionBodyState
             // Max size is 125
             padding: EdgeInsets.all(10 / items.length),
             width:
-                (MediaQuery.of(context).size.width * 0.8) / items.length > 125
+                (MediaQuery.of(context).size.width * 0.6) / items.length > 125
                     ? 125
-                    : MediaQuery.of(context).size.width * 0.8 / items.length,
+                    : MediaQuery.of(context).size.width * 0.6 / items.length,
             height:
-                (MediaQuery.of(context).size.width * 0.8) / items.length > 125
+                (MediaQuery.of(context).size.width * 0.6) / items.length > 125
                     ? 125
-                    : MediaQuery.of(context).size.width * 0.8 / items.length,
+                    : MediaQuery.of(context).size.width * 0.6 / items.length,
             child: item.image,
           ),
         ),

@@ -11,7 +11,8 @@ class RPUIIntegerQuestionBody extends StatefulWidget {
       _RPUIIntegerQuestionBodyState();
 }
 
-class _RPUIIntegerQuestionBodyState extends State<RPUIIntegerQuestionBody> with AutomaticKeepAliveClientMixin<RPUIIntegerQuestionBody> {
+class _RPUIIntegerQuestionBodyState extends State<RPUIIntegerQuestionBody>
+    with AutomaticKeepAliveClientMixin<RPUIIntegerQuestionBody> {
   TextEditingController _textEditingController;
   String _errorMessage;
   bool _valid;
@@ -61,11 +62,16 @@ class _RPUIIntegerQuestionBodyState extends State<RPUIIntegerQuestionBody> with 
       padding: EdgeInsets.all(8),
       alignment: Alignment.topLeft,
       child: SizedBox(
-        width: MediaQuery.of(context).size.width / 2,
+        width: MediaQuery.of(context).size.width,
         child: TextField(
           controller: _textEditingController,
 //          textAlign: TextAlign.right,
           decoration: InputDecoration(
+            border: InputBorder.none,
+            focusedBorder: InputBorder.none,
+            enabledBorder: InputBorder.none,
+            errorBorder: InputBorder.none,
+            disabledBorder: InputBorder.none,
             hintText: locale?.translate('Tap to answer') ?? "Tap to answer",
             suffix: widget.answerFormat.suffix != null
                 ? Text(locale?.translate(widget.answerFormat.suffix) ??

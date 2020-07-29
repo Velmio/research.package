@@ -51,14 +51,18 @@ class _RPUIChoiceQuestionBodyState extends State<RPUIChoiceQuestionBody>
       }
     }
 
-    selectedChoices.length != 0 ? widget.onResultChange(selectedChoices) : widget.onResultChange(null);
+    selectedChoices.length != 0
+        ? widget.onResultChange(selectedChoices)
+        : widget.onResultChange(null);
   }
 
   Widget _choiceCellBuilder(BuildContext context, int index) {
     return _ChoiceButton(
       choice: widget._answerFormat.choices[index],
       selectedCallBack: _buttonCallBack,
-      selected: selectedChoices.contains(widget._answerFormat.choices[index]) ? true : false,
+      selected: selectedChoices.contains(widget._answerFormat.choices[index])
+          ? true
+          : false,
       index: index,
     );
   }
@@ -72,10 +76,13 @@ class _RPUIChoiceQuestionBodyState extends State<RPUIChoiceQuestionBody>
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Text(widget._answerFormat.answerStyle == ChoiceAnswerStyle.MultipleChoice
-              ? (locale?.translate('(Choose one or more options)') ?? "(Choose one or more options)")
-              : (locale?.translate('(Choose one option)') ?? "(Choose one option)")),
+          padding: const EdgeInsets.symmetric(vertical: 24),
+          child: Text(widget._answerFormat.answerStyle ==
+                  ChoiceAnswerStyle.MultipleChoice
+              ? (locale?.translate('(Choose one or more options)') ??
+                  "(Choose one or more options)")
+              : (locale?.translate('(Choose one option)') ??
+                  "(Choose one option)")),
         ),
         ListView.builder(
           shrinkWrap: true,
@@ -83,6 +90,7 @@ class _RPUIChoiceQuestionBodyState extends State<RPUIChoiceQuestionBody>
           itemBuilder: _choiceCellBuilder,
           physics: NeverScrollableScrollPhysics(),
         ),
+        Container(height: 24),
       ],
     );
   }
@@ -97,7 +105,8 @@ class _ChoiceButton extends StatefulWidget {
   final bool selected;
   final int index;
 
-  _ChoiceButton({this.choice, this.selectedCallBack, this.selected, this.index});
+  _ChoiceButton(
+      {this.choice, this.selectedCallBack, this.selected, this.index});
 
   @override
   _ChoiceButtonState createState() => _ChoiceButtonState();
@@ -118,7 +127,8 @@ class _ChoiceButtonState extends State<_ChoiceButton> {
     return Padding(
       padding: const EdgeInsets.all(4.0),
       child: OutlineButton(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(6))),
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(6))),
         padding: EdgeInsets.all(14),
         onPressed: () {
           widget.selectedCallBack(choice);
@@ -132,20 +142,31 @@ class _ChoiceButtonState extends State<_ChoiceButton> {
                   ? Container(
                       child: TextField(
                         onChanged: (newText) => choice.text = newText,
-                        decoration: InputDecoration(hintText: RPLocalizations.of(context).translate("Other")),
+                        decoration: InputDecoration(
+                            border: InputBorder.none,
+        focusedBorder: InputBorder.none,
+        enabledBorder: InputBorder.none,
+        errorBorder: InputBorder.none,
+        disabledBorder: InputBorder.none,
+ 
+                            hintText:
+                                RPLocalizations.of(context).translate("Other")),
                       ),
                     )
                   : Text(
-                      locale?.translate(widget.choice.text) ?? widget.choice.text,
+                      locale?.translate(widget.choice.text) ??
+                          widget.choice.text,
                       style: widget.selected
-                          ? RPStyles.choiceAnswerText.copyWith(fontWeight: FontWeight.w500)
+                          ? RPStyles.choiceAnswerText
+                              .copyWith(fontWeight: FontWeight.w500)
                           : RPStyles.choiceAnswerText,
                       softWrap: true,
                     ),
             ),
             Flexible(
               flex: 1,
-              child: Icon(widget.selected ? Icons.check : null, color: Colors.black),
+              child: Icon(widget.selected ? Icons.check : null,
+                  color: Theme.of(context).accentColor),
             ),
           ],
         ),

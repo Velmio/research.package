@@ -36,11 +36,13 @@ class _RPUIFormStepState extends State<RPUIFormStep> {
   void initState() {
     // Instantiating the result object here to start the time counter (startDate)
     stepResult = RPStepResult.withParams(widget.formStep);
-    stepResult.questionTitle = "Form Step - See titles for every question included";
+    stepResult.questionTitle =
+        "Form Step - See titles for every question included";
 
     // Filling up the results with nulls
     widget.formStep.steps.forEach((item) {
-      stepResult.setResultForIdentifier(item.identifier, RPStepResult.withParams(item));
+      stepResult.setResultForIdentifier(
+          item.identifier, RPStepResult.withParams(item));
     });
 
     readyToProceed = false;
@@ -58,14 +60,17 @@ class _RPUIFormStepState extends State<RPUIFormStep> {
 //      result.setResult(result);
 //    }
 
-  // TODO: Let's convert these operations into a function
+    // TODO: Let's convert these operations into a function
 
     switch (answerFormat.runtimeType) {
       case RPIntegerAnswerFormat:
         return RPUIIntegerQuestionBody(answerFormat, (result) {
 //          (stepResult.results[id] as RPStepResult).setResult(result);
           RPStepResult tempResult = stepResult.results[id] as RPStepResult;
-          tempResult.questionTitle = widget.formStep.steps.where((step) => step.identifier == id).first.title;
+          tempResult.questionTitle = widget.formStep.steps
+              .where((step) => step.identifier == id)
+              .first
+              .title;
           tempResult.setResult(result);
 
           checkReadyToProceed();
@@ -74,7 +79,10 @@ class _RPUIFormStepState extends State<RPUIFormStep> {
         return RPUIChoiceQuestionBody(answerFormat, (result) {
 //          (stepResult.results[id] as RPStepResult).setResult(result);
           RPStepResult tempResult = stepResult.results[id] as RPStepResult;
-          tempResult.questionTitle = widget.formStep.steps.where((step) => step.identifier == id).first.title;
+          tempResult.questionTitle = widget.formStep.steps
+              .where((step) => step.identifier == id)
+              .first
+              .title;
           tempResult.setResult(result);
 
           checkReadyToProceed();
@@ -83,7 +91,10 @@ class _RPUIFormStepState extends State<RPUIFormStep> {
         return RPUISliderQuestionBody(answerFormat, (result) {
 //          (stepResult.results[id] as RPStepResult).setResult(result);
           RPStepResult tempResult = stepResult.results[id] as RPStepResult;
-          tempResult.questionTitle = widget.formStep.steps.where((step) => step.identifier == id).first.title;
+          tempResult.questionTitle = widget.formStep.steps
+              .where((step) => step.identifier == id)
+              .first
+              .title;
           tempResult.setResult(result);
 
           checkReadyToProceed();
@@ -92,7 +103,10 @@ class _RPUIFormStepState extends State<RPUIFormStep> {
         return RPUIImageChoiceQuestionBody(answerFormat, (result) {
 //          (stepResult.results[id] as RPStepResult).setResult(result);
           RPStepResult tempResult = stepResult.results[id] as RPStepResult;
-          tempResult.questionTitle = widget.formStep.steps.where((step) => step.identifier == id).first.title;
+          tempResult.questionTitle = widget.formStep.steps
+              .where((step) => step.identifier == id)
+              .first
+              .title;
           tempResult.setResult(result);
 
           checkReadyToProceed();
@@ -101,7 +115,10 @@ class _RPUIFormStepState extends State<RPUIFormStep> {
         return RPUIDateTimeQuestionBody(answerFormat, (result) {
 //          (stepResult.results[id] as RPStepResult).setResult(result);
           RPStepResult tempResult = stepResult.results[id] as RPStepResult;
-          tempResult.questionTitle = widget.formStep.steps.where((step) => step.identifier == id).first.title;
+          tempResult.questionTitle = widget.formStep.steps
+              .where((step) => step.identifier == id)
+              .first
+              .title;
           tempResult.setResult(result);
 
           checkReadyToProceed();
@@ -110,7 +127,10 @@ class _RPUIFormStepState extends State<RPUIFormStep> {
         return RPUIBooleanQuestionBody(answerFormat, (result) {
 //          (stepResult.results[id] as RPStepResult).setResult(result);
           RPStepResult tempResult = stepResult.results[id] as RPStepResult;
-          tempResult.questionTitle = widget.formStep.steps.where((step) => step.identifier == id).first.title;
+          tempResult.questionTitle = widget.formStep.steps
+              .where((step) => step.identifier == id)
+              .first
+              .title;
           tempResult.setResult(result);
 
           checkReadyToProceed();
@@ -132,9 +152,11 @@ class _RPUIFormStepState extends State<RPUIFormStep> {
     if (index == 0) {
       return (widget.formStep.title != null)
           ? Padding(
-              padding: const EdgeInsets.only(bottom: 24, left: 8, right: 8, top: 8),
+              padding:
+                  const EdgeInsets.only(bottom: 24, left: 20, right: 8, top: 8),
               child: Text(
-                RPLocalizations.of(context)?.translate(widget.formStep.title) ?? widget.formStep.title,
+                RPLocalizations.of(context)?.translate(widget.formStep.title) ??
+                    widget.formStep.title,
                 style: RPStyles.h2,
                 textAlign: TextAlign.left,
               ),
@@ -146,10 +168,15 @@ class _RPUIFormStepState extends State<RPUIFormStep> {
     if (index == widget.formStep.steps.length) {
       return widget.formStep.optional
           ? Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.symmetric(vertical: 20),
               child: FlatButton(
                 onPressed: () => skipQuestion(),
-                child: Text("Skip these questions"), // TODO: Localization
+                child: Text(
+                  "Skip these questions",
+                  style: TextStyle(
+                    color: Theme.of(context).accentColor,
+                  ),
+                ), // TODO: Localization
               ),
             )
           : Container();
@@ -162,20 +189,26 @@ class _RPUIFormStepState extends State<RPUIFormStep> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding:
+                const EdgeInsets.symmetric(vertical: 20.0, horizontal: 20.0),
             child: Text(
-              RPLocalizations.of(context)?.translate(widget.formStep.steps[index].title) ??
+              RPLocalizations.of(context)
+                      ?.translate(widget.formStep.steps[index].title) ??
                   widget.formStep.steps[index].title,
               style: RPStyles.h3,
             ),
           ),
-          Card(
-            elevation: 4,
-            child: Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: stepBody(
-                widget.formStep.steps[index].identifier,
-                widget.formStep.steps[index].answerFormat,
+          Padding(
+            padding: const EdgeInsets.all(20.0),
+            child: CustomCard(
+              //elevation: 4,
+              enablePadding: true,
+              child: Padding(
+                padding: const EdgeInsets.all(0),
+                child: stepBody(
+                  widget.formStep.steps[index].identifier,
+                  widget.formStep.steps[index].answerFormat,
+                ),
               ),
             ),
           ),

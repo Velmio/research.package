@@ -121,9 +121,8 @@ class _RPUIVisualConsentStep extends State<RPUIVisualConsentStep>
 
     return Container(
       padding: EdgeInsets.all(10.0),
-      //color: Colors.white,
-      child: Card(
-        elevation: 2.0,
+      child: CustomCard(
+        enablePadding: true,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: <Widget>[

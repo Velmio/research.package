@@ -52,14 +52,15 @@ class _RPUIInstructionStepState extends State<RPUIInstructionStep> {
                 padding: EdgeInsets.all(16),
                 child: Text(
                   locale?.translate(widget.step.text) ?? widget.step.text,
-                  textAlign: TextAlign.left,
+                  textAlign: TextAlign.center,
                   style: RPStyles.instructionText,
                 ),
               ),
               widget.step.detailText != null
                   ? FlatButton(
                       textTheme: ButtonTextTheme.accent,
-                      child: Text(locale?.translate('Learn more...') ?? "Learn more..."),
+                      child: Text(locale?.translate('Learn more...') ??
+                          "Learn more..."),
                       onPressed: _pushDetailTextRoute,
                     )
                   : Container(),
@@ -69,8 +70,9 @@ class _RPUIInstructionStepState extends State<RPUIInstructionStep> {
               ? Container(
                   padding: const EdgeInsets.all(8.0),
                   child: Text(
-                    locale?.translate(widget.step.footnote) ?? widget.step.footnote,
-                    style: RPStyles.bodyText,
+                    locale?.translate(widget.step.footnote) ??
+                        widget.step.footnote,
+                    style: Theme.of(context).textTheme.bodyText2,
                     textAlign: TextAlign.left,
                   ),
                 )

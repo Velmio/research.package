@@ -4,6 +4,7 @@ import 'linear_survey_page.dart';
 import 'navigable_survey_page.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:research_package/research_package.dart';
+import 'app_theme.dart';
 
 void main() => runApp(MyApp());
 
@@ -40,9 +41,33 @@ class MyApp extends StatelessWidget {
         // from the list (English, in this case).
         return supportedLocales.first;
       },
-      theme: ThemeData.light().copyWith(
-          primaryColor: Colors.deepPurple,
-          accentColor: Colors.deepOrangeAccent),
+      theme: ThemeData(
+        appBarTheme: AppBarTheme(color: Colors.transparent, elevation: 0),
+        primarySwatch: velmioColor,
+        scaffoldBackgroundColor: Color(0xffF6F7F8),
+        iconTheme: IconThemeData(color: velmioColor),
+        textTheme: TextTheme(
+          headline1: TextStyle(
+            fontFamily: 'Quicksand',
+            color: Color(0xff414141),
+            fontSize: 32,
+            fontWeight: FontWeight.w700,
+            fontStyle: FontStyle.normal,
+          ),
+          headline3: TextStyle(
+            fontFamily: 'Quicksand',
+            color: Color(0xff414141),
+            fontSize: 18,
+            fontWeight: FontWeight.w700,
+            fontStyle: FontStyle.normal,
+          ),
+          bodyText1: TextStyle(
+            fontFamily: "Open Sans",
+            fontSize: 14,
+            color: Color(0xff7f7f7f),
+          ),
+        ),
+      ),
       title: 'Research Package Demo',
       home: MyHomePage(),
       debugShowCheckedModeBanner: false,
@@ -70,7 +95,8 @@ class _MyHomePageState extends State<MyHomePage> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
               Padding(
-                padding: const EdgeInsets.symmetric(vertical: 50, horizontal: 8),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 50, horizontal: 8),
                 child: Text(
                   "With Research Package you can obtain informed consent, create surveys and collect their results",
                   textAlign: TextAlign.center,
@@ -106,7 +132,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     style: TextStyle(fontSize: 18),
                   ),
                   onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => LinearSurveyPage()));
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => LinearSurveyPage()));
                   },
                 ),
               ),
@@ -122,7 +149,8 @@ class _MyHomePageState extends State<MyHomePage> {
                     style: TextStyle(fontSize: 18),
                   ),
                   onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(builder: (context) => NavigableSurveyPage()));
+                    Navigator.of(context).push(MaterialPageRoute(
+                        builder: (context) => NavigableSurveyPage()));
                   },
                 ),
               ),

@@ -149,8 +149,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     style: TextStyle(fontSize: 18),
                   ),
                   onPressed: () {
-                    Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) => NavigableSurveyPage()));
+                    Navigator.of(context).push(
+                      MaterialPageRoute(
+                        builder: (context) => NavigableSurveyPage(),
+                      ),
+                    );
                   },
                 ),
               ),

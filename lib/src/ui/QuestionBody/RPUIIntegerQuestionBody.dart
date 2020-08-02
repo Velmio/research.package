@@ -59,7 +59,9 @@ class _RPUIIntegerQuestionBodyState extends State<RPUIIntegerQuestionBody>
     super.build(context);
     RPLocalizations locale = RPLocalizations.of(context);
     return Container(
-      padding: EdgeInsets.all(8),
+      padding: _valid
+          ? EdgeInsets.all(8)
+          : EdgeInsets.only(left: 8, right: 8, top: 8, bottom: 16),
       alignment: Alignment.topLeft,
       child: SizedBox(
         width: MediaQuery.of(context).size.width,

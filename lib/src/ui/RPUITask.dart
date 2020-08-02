@@ -187,13 +187,34 @@ class _RPUITaskState extends State<RPUITask> with CanSaveResult {
 //            title: Text(recentTaskProgress != null ? "${recentTaskProgress?.current} ${locale?.translate('of') ?? 'of'} ${recentTaskProgress?.total}" : ""),
             automaticallyImplyLeading: false,
             actions: <Widget>[
-              IconButton(
-                icon: Icon(
-                  Icons.close,
-                  color: Theme.of(context).accentColor,
+              FlatButton(
+                child: ClipOval(
+                  child: Container(
+                    width: 30,
+                    height: 30,
+                    color: Theme.of(context).accentColor,
+                    child: Padding(
+                      padding: const EdgeInsets.all(5.0),
+                      child: Icon(
+                        Icons.close,
+                        color: Colors.white,
+                        size: 20,
+                      ),
+                    ),
+                  ),
                 ),
-                onPressed: () => blocTask.sendStatus(StepStatus.Canceled),
+                onPressed: () {
+                  blocTask.sendStatus(StepStatus.Canceled);
+                },
               )
+
+              // IconButton(
+              //   icon: Icon(
+              //     Icons.close,
+              //     color: Theme.of(context).accentColor,
+              //   ),
+              //   onPressed: () => blocTask.sendStatus(StepStatus.Canceled),
+              // )
             ],
           );
           break;
@@ -202,13 +223,26 @@ class _RPUITaskState extends State<RPUITask> with CanSaveResult {
 //            title: Text(recentTaskProgress != null ? "${recentTaskProgress?.current} ${locale?.translate('of') ?? 'of'} ${recentTaskProgress?.total}" : ""),
             automaticallyImplyLeading: false,
             actions: <Widget>[
-              IconButton(
-                icon: Icon(
-                  Icons.close,
-                  color: Theme.of(context).accentColor,
+              FlatButton(
+                child: ClipOval(
+                  child: Container(
+                    width: 30,
+                    height: 30,
+                    color: Theme.of(context).accentColor,
+                    child: Padding(
+                      padding: const EdgeInsets.all(5.0),
+                      child: Icon(
+                        Icons.close,
+                        color: Colors.white,
+                        size: 20,
+                      ),
+                    ),
+                  ),
                 ),
-                onPressed: () => blocTask.sendStatus(StepStatus.Canceled),
-              )
+                onPressed: () {
+                  blocTask.sendStatus(StepStatus.Canceled);
+                },
+              ),
             ],
           );
           break;
@@ -217,13 +251,26 @@ class _RPUITaskState extends State<RPUITask> with CanSaveResult {
             title: Text(locale?.translate(step.title) ?? step.title),
             automaticallyImplyLeading: false,
             actions: <Widget>[
-              IconButton(
-                icon: Icon(
-                  Icons.close,
-                  color: Theme.of(context).accentColor,
+              FlatButton(
+                child: ClipOval(
+                  child: Container(
+                    width: 30,
+                    height: 30,
+                    color: Theme.of(context).accentColor,
+                    child: Padding(
+                      padding: const EdgeInsets.all(5.0),
+                      child: Icon(
+                        Icons.close,
+                        color: Colors.white,
+                        size: 20,
+                      ),
+                    ),
+                  ),
                 ),
-                onPressed: () => blocTask.sendStatus(StepStatus.Canceled),
-              )
+                onPressed: () {
+                  blocTask.sendStatus(StepStatus.Canceled);
+                },
+              ),
             ],
           );
           break;
@@ -317,18 +364,20 @@ class _RPUITaskState extends State<RPUITask> with CanSaveResult {
       onWillPop: () => blocTask.sendStatus(StepStatus.Canceled),
       child: Theme(
         data: Theme.of(context),
-        child: Scaffold(
-          resizeToAvoidBottomInset: true,
-          appBar: _taskAppBar(_currentStep),
-          body: PageView.builder(
-            itemBuilder: (BuildContext context, int position) {
-              return _activeSteps[position].stepWidget;
-            },
-            itemCount: _activeSteps.length,
-            controller: _taskPageViewController,
-            physics: NeverScrollableScrollPhysics(),
+        child: KeyboardHider(
+          child: Scaffold(
+            resizeToAvoidBottomInset: true,
+            appBar: _taskAppBar(_currentStep),
+            body: PageView.builder(
+              itemBuilder: (BuildContext context, int position) {
+                return _activeSteps[position].stepWidget;
+              },
+              itemCount: _activeSteps.length,
+              controller: _taskPageViewController,
+              physics: NeverScrollableScrollPhysics(),
+            ),
+            persistentFooterButtons: _taskPersistentFooterButtons(_currentStep),
           ),
-          persistentFooterButtons: _taskPersistentFooterButtons(_currentStep),
         ),
       ),
     );

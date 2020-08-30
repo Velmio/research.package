@@ -161,8 +161,10 @@ class _RPUITaskState extends State<RPUITask> with CanSaveResult {
           title: Text(widget.task.isConsentTask
               ? RPLocalizations.of(context)?.translate('Cancel?') ?? "Cancel?"
               : RPLocalizations.of(context)
-                      ?.translate('Discard results and quit?') ??
-                  "Discard results and quit?"),
+                      ?.translate('Would you like to quit?') ??
+                  "Would you like to quit?"),
+          content: Text(
+              'Your answers will be saved for later. You can change them at any time'),
           actions: <Widget>[
             FlatButton(
               child: Text(RPLocalizations.of(context)?.translate('NO') ?? "NO"),
@@ -198,7 +200,11 @@ class _RPUITaskState extends State<RPUITask> with CanSaveResult {
       switch (step.runtimeType) {
         case RPQuestionStep:
           return AppBar(
-//            title: Text(recentTaskProgress != null ? "${recentTaskProgress?.current} ${locale?.translate('of') ?? 'of'} ${recentTaskProgress?.total}" : ""),
+            // title: Text(recentTaskProgress != null
+            //     ? "${recentTaskProgress?.current} ${locale?.translate('of') ?? 'of'} ${recentTaskProgress?.total}"
+            //     : ""),
+            title: Text(
+                'Question $_currentQuestionIndex / ${widget.task.steps.length}'),
             automaticallyImplyLeading: false,
             actions: <Widget>[
               FlatButton(
@@ -220,15 +226,7 @@ class _RPUITaskState extends State<RPUITask> with CanSaveResult {
                 onPressed: () {
                   blocTask.sendStatus(StepStatus.Canceled);
                 },
-              )
-
-              // IconButton(
-              //   icon: Icon(
-              //     Icons.close,
-              //     color: Theme.of(context).accentColor,
-              //   ),
-              //   onPressed: () => blocTask.sendStatus(StepStatus.Canceled),
-              // )
+              ),
             ],
           );
           break;
@@ -362,8 +360,8 @@ class _RPUITaskState extends State<RPUITask> with CanSaveResult {
                             borderRadius: BorderRadius.circular(20.0)),
                         child: Text(
                             RPLocalizations.of(context)
-                                    ?.translate('PREVIOUS') ??
-                                "PREVIOUS",
+                                    ?.translate('Previous') ??
+                                "Previous",
                             style: TextStyle(
                                 color: Theme.of(context).accentColor)),
                         onPressed: () {

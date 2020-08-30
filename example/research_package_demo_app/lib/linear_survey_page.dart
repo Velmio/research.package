@@ -4,7 +4,8 @@ import 'research_package_objects/linear_survey_objects.dart';
 import 'dart:convert';
 
 class LinearSurveyPage extends StatelessWidget {
-  String _encode(Object object) => const JsonEncoder.withIndent(' ').convert(object);
+  String _encode(Object object) =>
+      const JsonEncoder.withIndent(' ').convert(object);
 
   void resultCallback(RPTaskResult result) {
     // Do anything with the result
@@ -23,6 +24,7 @@ class LinearSurveyPage extends StatelessWidget {
       onSubmit: (result) {
         resultCallback(result);
       },
+
       // No onCancel
       // If there's no onCancel provided the survey just quits
     );

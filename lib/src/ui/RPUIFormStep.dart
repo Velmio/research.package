@@ -152,13 +152,13 @@ class _RPUIFormStepState extends State<RPUIFormStep> {
     if (index == 0) {
       return (widget.formStep.title != null)
           ? Padding(
-              padding:
-                  const EdgeInsets.only(bottom: 24, left: 20, right: 8, top: 8),
+              padding: const EdgeInsets.only(
+                  bottom: 24, left: 20, right: 8, top: 30),
               child: Text(
                 RPLocalizations.of(context)?.translate(widget.formStep.title) ??
                     widget.formStep.title,
                 style: RPStyles.h2,
-                textAlign: TextAlign.left,
+                textAlign: TextAlign.center,
               ),
             )
           : null;

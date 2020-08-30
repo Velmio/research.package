@@ -87,11 +87,11 @@ class _RPUIQuestionStepState extends State<RPUIQuestionStep>
         (widget.step.title != null)
             ? Padding(
                 padding: const EdgeInsets.only(
-                    bottom: 24, left: 20, right: 8, top: 8),
+                    bottom: 24, left: 20, right: 8, top: 30),
                 child: Text(
                   locale?.translate(widget.step.title) ?? widget.step.title,
                   style: RPStyles.h2,
-                  textAlign: TextAlign.left,
+                  textAlign: TextAlign.center,
                 ),
               )
             : null,
@@ -136,7 +136,7 @@ class Title extends StatelessWidget {
   Widget build(BuildContext context) {
     if (title != null) {
       return Padding(
-        padding: const EdgeInsets.only(bottom: 24, left: 8, right: 8, top: 20),
+        padding: const EdgeInsets.only(bottom: 24, left: 8, right: 8, top: 30),
         child: Text(
           title,
           style: RPStyles.h2,

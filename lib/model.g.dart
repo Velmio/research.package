@@ -80,6 +80,8 @@ const _$QuestionTypeEnumMap = {
 RPIntegerAnswerFormat _$RPIntegerAnswerFormatFromJson(
     Map<String, dynamic> json) {
   return RPIntegerAnswerFormat()
+    ..questionType =
+        _$enumDecodeNullable(_$QuestionTypeEnumMap, json['question_type'])
     ..maxValue = json['max_value'] as int
     ..minValue = json['min_value'] as int;
 }
@@ -94,6 +96,7 @@ Map<String, dynamic> _$RPIntegerAnswerFormatToJson(
     }
   }
 
+  writeNotNull('question_type', _$QuestionTypeEnumMap[instance.questionType]);
   writeNotNull('max_value', instance.maxValue);
   writeNotNull('min_value', instance.minValue);
   return val;
@@ -132,6 +135,7 @@ const _$ChoiceAnswerStyleEnumMap = {
 
 RPChoice _$RPChoiceFromJson(Map<String, dynamic> json) {
   return RPChoice()
+    ..id = json['id'] as String
     ..text = json['text']
     ..value = json['value']
     ..detailText = json['detail_text'];
@@ -146,6 +150,7 @@ Map<String, dynamic> _$RPChoiceToJson(RPChoice instance) {
     }
   }
 
+  writeNotNull('id', instance.id);
   writeNotNull('text', instance.text);
   writeNotNull('value', instance.value);
   writeNotNull('detail_text', instance.detailText);
@@ -153,14 +158,28 @@ Map<String, dynamic> _$RPChoiceToJson(RPChoice instance) {
 }
 
 RPFormAnswerFormat _$RPFormAnswerFormatFromJson(Map<String, dynamic> json) {
-  return RPFormAnswerFormat();
+  return RPFormAnswerFormat()
+    ..questionType =
+        _$enumDecodeNullable(_$QuestionTypeEnumMap, json['question_type']);
 }
 
-Map<String, dynamic> _$RPFormAnswerFormatToJson(RPFormAnswerFormat instance) =>
-    <String, dynamic>{};
+Map<String, dynamic> _$RPFormAnswerFormatToJson(RPFormAnswerFormat instance) {
+  final val = <String, dynamic>{};
+
+  void writeNotNull(String key, dynamic value) {
+    if (value != null) {
+      val[key] = value;
+    }
+  }
+
+  writeNotNull('question_type', _$QuestionTypeEnumMap[instance.questionType]);
+  return val;
+}
 
 RPSliderAnswerFormat _$RPSliderAnswerFormatFromJson(Map<String, dynamic> json) {
   return RPSliderAnswerFormat()
+    ..questionType =
+        _$enumDecodeNullable(_$QuestionTypeEnumMap, json['question_type'])
     ..maxValue = (json['max_value'] as num)?.toDouble()
     ..minValue = (json['min_value'] as num)?.toDouble()
     ..divisions = json['divisions'] as int
@@ -178,6 +197,7 @@ Map<String, dynamic> _$RPSliderAnswerFormatToJson(
     }
   }
 
+  writeNotNull('question_type', _$QuestionTypeEnumMap[instance.questionType]);
   writeNotNull('max_value', instance.maxValue);
   writeNotNull('min_value', instance.minValue);
   writeNotNull('divisions', instance.divisions);
@@ -189,6 +209,8 @@ Map<String, dynamic> _$RPSliderAnswerFormatToJson(
 RPImageChoiceAnswerFormat _$RPImageChoiceAnswerFormatFromJson(
     Map<String, dynamic> json) {
   return RPImageChoiceAnswerFormat()
+    ..questionType =
+        _$enumDecodeNullable(_$QuestionTypeEnumMap, json['question_type'])
     ..choices = (json['choices'] as List)
         ?.map((e) => e == null
             ? null
@@ -206,6 +228,7 @@ Map<String, dynamic> _$RPImageChoiceAnswerFormatToJson(
     }
   }
 
+  writeNotNull('question_type', _$QuestionTypeEnumMap[instance.questionType]);
   writeNotNull('choices', instance.choices);
   return val;
 }
@@ -266,6 +289,8 @@ const _$DateTimeAnswerStyleEnumMap = {
 RPBooleanAnswerFormat _$RPBooleanAnswerFormatFromJson(
     Map<String, dynamic> json) {
   return RPBooleanAnswerFormat()
+    ..questionType =
+        _$enumDecodeNullable(_$QuestionTypeEnumMap, json['question_type'])
     ..trueText = json['true_text'] as String
     ..falseText = json['false_text'] as String;
 }
@@ -280,6 +305,7 @@ Map<String, dynamic> _$RPBooleanAnswerFormatToJson(
     }
   }
 
+  writeNotNull('question_type', _$QuestionTypeEnumMap[instance.questionType]);
   writeNotNull('true_text', instance.trueText);
   writeNotNull('false_text', instance.falseText);
   return val;

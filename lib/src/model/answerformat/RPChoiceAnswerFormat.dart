@@ -10,8 +10,9 @@ class RPChoiceAnswerFormat extends RPAnswerFormat {
 
   /// Returns an initialized choice answer format with the given [ChoiceAnswerStyle] and the set of [RPChoice]s.
   RPChoiceAnswerFormat.withParams(this.answerStyle, this._choices) {
-    questionType =
-        answerStyle == ChoiceAnswerStyle.SingleChoice ? QuestionType.SingleChoice : QuestionType.MultipleChoice;
+    questionType = answerStyle == ChoiceAnswerStyle.SingleChoice
+        ? QuestionType.SingleChoice
+        : QuestionType.MultipleChoice;
   }
 
   /// An array of available [RPChoice] objects which represent the choices to the participant.
@@ -21,7 +22,8 @@ class RPChoiceAnswerFormat extends RPAnswerFormat {
     this._choices = choices;
   }
 
-  factory RPChoiceAnswerFormat.fromJson(Map<String, dynamic> json) => _$RPChoiceAnswerFormatFromJson(json);
+  factory RPChoiceAnswerFormat.fromJson(Map<String, dynamic> json) =>
+      _$RPChoiceAnswerFormatFromJson(json);
   Map<String, dynamic> toJson() => _$RPChoiceAnswerFormatToJson(this);
 }
 
@@ -30,20 +32,23 @@ class RPChoiceAnswerFormat extends RPAnswerFormat {
 class RPChoice {
   String _text;
   int _value;
+  String id;
   String _detailText;
   bool _isFreeText;
 
   RPChoice();
 
   /// Default constructor with [detailText] set to ```null```.
-  RPChoice.withParams(String text, int value, [this._isFreeText = false]) {
+  RPChoice.withParams(String text, String id, int value,
+      [this._isFreeText = false]) {
     this._text = text;
+    this.id = id;
     this._value = value;
     this._detailText = null;
   }
 
   /// Constructor with the option to provide [detailText]
-  RPChoice.withDetailText(this._text, this._value, this._detailText);
+  RPChoice.withDetailText(this._text, this._value, this.id, this._detailText);
 
   /// The text to display.
   get text => this._text;
@@ -68,6 +73,7 @@ class RPChoice {
     this._detailText = detailText;
   }
 
-  factory RPChoice.fromJson(Map<String, dynamic> json) => _$RPChoiceFromJson(json);
+  factory RPChoice.fromJson(Map<String, dynamic> json) =>
+      _$RPChoiceFromJson(json);
   Map<String, dynamic> toJson() => _$RPChoiceToJson(this);
 }

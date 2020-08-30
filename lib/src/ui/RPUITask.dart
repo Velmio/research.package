@@ -196,94 +196,156 @@ class _RPUITaskState extends State<RPUITask> with CanSaveResult {
   Widget build(BuildContext context) {
     RPLocalizations locale = RPLocalizations.of(context);
 
-    AppBar _taskAppBar(RPStep step) {
+    PreferredSizeWidget _taskAppBar(RPStep step) {
       switch (step.runtimeType) {
         case RPQuestionStep:
-          return AppBar(
-            // title: Text(recentTaskProgress != null
-            //     ? "${recentTaskProgress?.current} ${locale?.translate('of') ?? 'of'} ${recentTaskProgress?.total}"
-            //     : ""),
-            title: Text(
-                'Question $_currentQuestionIndex / ${widget.task.steps.length}'),
-            automaticallyImplyLeading: false,
-            actions: <Widget>[
-              FlatButton(
-                child: ClipOval(
-                  child: Container(
-                    width: 30,
-                    height: 30,
-                    color: Theme.of(context).accentColor,
-                    child: Padding(
-                      padding: const EdgeInsets.all(5.0),
-                      child: Icon(
-                        Icons.close,
-                        color: Colors.white,
-                        size: 20,
+          return PreferredSize(
+            preferredSize: Size.fromHeight(kToolbarHeight),
+            child: ClipRRect(
+              clipBehavior: Clip.antiAlias,
+              borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(20.0),
+                  bottomRight: Radius.circular(20.0)),
+              child: AppBar(
+                //shape: ShapeBorder(),
+                title: Text(
+                  'Question $_currentQuestionIndex / ${widget.task.steps.length}',
+                  style: TextStyle(
+                    fontFamily: 'Quicksand',
+                    color: Color(0xff414141),
+                    fontSize: 18,
+                    fontWeight: FontWeight.w700,
+                    fontStyle: FontStyle.normal,
+                  ),
+                ),
+                backgroundColor: Colors.white,
+                leading: Container(),
+                actions: <Widget>[
+                  FlatButton(
+                    onPressed: () {
+                      blocTask.sendStatus(StepStatus.Canceled);
+                    },
+                    child: ClipOval(
+                      child: Container(
+                        width: 30,
+                        height: 30,
+                        color: Theme.of(context).accentColor,
+                        child: Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Icon(
+                            Icons.close,
+                            color: Colors.white,
+                            size: 20,
+                          ),
+                        ),
                       ),
                     ),
                   ),
-                ),
-                onPressed: () {
-                  blocTask.sendStatus(StepStatus.Canceled);
-                },
+                ],
+                centerTitle: true,
+                iconTheme: IconThemeData(color: Theme.of(context).accentColor),
               ),
-            ],
+            ),
           );
           break;
         case RPFormStep:
-          return AppBar(
-//            title: Text(recentTaskProgress != null ? "${recentTaskProgress?.current} ${locale?.translate('of') ?? 'of'} ${recentTaskProgress?.total}" : ""),
-            automaticallyImplyLeading: false,
-            actions: <Widget>[
-              FlatButton(
-                child: ClipOval(
-                  child: Container(
-                    width: 30,
-                    height: 30,
-                    color: Theme.of(context).accentColor,
-                    child: Padding(
-                      padding: const EdgeInsets.all(5.0),
-                      child: Icon(
-                        Icons.close,
-                        color: Colors.white,
-                        size: 20,
+          return PreferredSize(
+            preferredSize: Size.fromHeight(kToolbarHeight),
+            child: ClipRRect(
+              clipBehavior: Clip.antiAlias,
+              borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(20.0),
+                  bottomRight: Radius.circular(20.0)),
+              child: AppBar(
+                //shape: ShapeBorder(),
+                title: Text(
+                  'Question $_currentQuestionIndex / ${widget.task.steps.length}',
+                  style: TextStyle(
+                    fontFamily: 'Quicksand',
+                    color: Color(0xff414141),
+                    fontSize: 18,
+                    fontWeight: FontWeight.w700,
+                    fontStyle: FontStyle.normal,
+                  ),
+                ),
+                backgroundColor: Colors.white,
+                leading: Container(),
+                actions: <Widget>[
+                  FlatButton(
+                    onPressed: () {
+                      blocTask.sendStatus(StepStatus.Canceled);
+                    },
+                    child: ClipOval(
+                      child: Container(
+                        width: 30,
+                        height: 30,
+                        color: Theme.of(context).accentColor,
+                        child: Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Icon(
+                            Icons.close,
+                            color: Colors.white,
+                            size: 20,
+                          ),
+                        ),
                       ),
                     ),
                   ),
-                ),
-                onPressed: () {
-                  blocTask.sendStatus(StepStatus.Canceled);
-                },
+                ],
+                centerTitle: true,
+                iconTheme: IconThemeData(color: Theme.of(context).accentColor),
               ),
-            ],
+            ),
           );
           break;
         case RPInstructionStep:
-          return AppBar(
-            title: Text(locale?.translate(step.title) ?? step.title),
-            automaticallyImplyLeading: false,
-            actions: <Widget>[
-              FlatButton(
-                child: ClipOval(
-                  child: Container(
-                    width: 30,
-                    height: 30,
-                    color: Theme.of(context).accentColor,
-                    child: Padding(
-                      padding: const EdgeInsets.all(5.0),
-                      child: Icon(
-                        Icons.close,
-                        color: Colors.white,
-                        size: 20,
+          return PreferredSize(
+            preferredSize: Size.fromHeight(kToolbarHeight),
+            child: ClipRRect(
+              clipBehavior: Clip.antiAlias,
+              borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(20.0),
+                  bottomRight: Radius.circular(20.0)),
+              child: AppBar(
+                //shape: ShapeBorder(),
+                title: Text(
+                  'Question $_currentQuestionIndex / ${widget.task.steps.length}',
+                  style: TextStyle(
+                    fontFamily: 'Quicksand',
+                    color: Color(0xff414141),
+                    fontSize: 18,
+                    fontWeight: FontWeight.w700,
+                    fontStyle: FontStyle.normal,
+                  ),
+                ),
+                backgroundColor: Colors.white,
+                leading: Container(),
+                actions: <Widget>[
+                  FlatButton(
+                    onPressed: () {
+                      blocTask.sendStatus(StepStatus.Canceled);
+                    },
+                    child: ClipOval(
+                      child: Container(
+                        width: 30,
+                        height: 30,
+                        color: Theme.of(context).accentColor,
+                        child: Padding(
+                          padding: const EdgeInsets.all(5.0),
+                          child: Icon(
+                            Icons.close,
+                            color: Colors.white,
+                            size: 20,
+                          ),
+                        ),
                       ),
                     ),
                   ),
-                ),
-                onPressed: () {
-                  blocTask.sendStatus(StepStatus.Canceled);
-                },
+                ],
+                centerTitle: true,
+                iconTheme: IconThemeData(color: Theme.of(context).accentColor),
               ),
-            ],
+            ),
           );
           break;
         default:

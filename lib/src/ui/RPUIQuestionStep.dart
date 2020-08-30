@@ -136,11 +136,11 @@ class Title extends StatelessWidget {
   Widget build(BuildContext context) {
     if (title != null) {
       return Padding(
-        padding: const EdgeInsets.only(bottom: 24, left: 8, right: 8, top: 8),
+        padding: const EdgeInsets.only(bottom: 24, left: 8, right: 8, top: 20),
         child: Text(
           title,
           style: RPStyles.h2,
-          textAlign: TextAlign.left,
+          textAlign: TextAlign.center,
         ),
       );
     }

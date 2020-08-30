@@ -11,6 +11,11 @@ class LinearSurveyPage extends StatelessWidget {
     print(_encode(result));
   }
 
+  void cancelCallBack(RPTaskResult result) {
+    // Do anything with the result at the moment of the cancellation
+    print("The result so far:\n" + _encode(result));
+  }
+
   @override
   Widget build(BuildContext context) {
     return RPUITask(
@@ -18,6 +23,8 @@ class LinearSurveyPage extends StatelessWidget {
       onSubmit: (result) {
         resultCallback(result);
       },
+      // No onCancel
+      // If there's no onCancel provided the survey just quits
     );
   }
 }

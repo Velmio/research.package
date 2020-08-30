@@ -12,7 +12,19 @@ class RPUITask extends StatefulWidget {
   /// This function is called when the participant has finished the last step.
   final void Function(RPTaskResult) onSubmit;
 
-  RPUITask({this.task, this.onSubmit});
+  /// The callback function which has to return an [RPTaskResult] object.
+  /// This function is called when the participant cancels a survey. The result parameter is optional so if you don't want to do grab the result as part of the callback function you can do so, like the following:
+  ///
+  /// ```
+  /// onCancel: ([result]) {
+  ///        cancelCallBack();
+  ///      },
+  /// ```
+  ///
+  /// It's only optional. If nothing is provided (is ```null```) the survey just quits without doing anything with the result.
+  final void Function([RPTaskResult result]) onCancel;
+
+  RPUITask({this.task, this.onSubmit, this.onCancel});
 
   @override
   _RPUITaskState createState() => _RPUITaskState();
@@ -161,7 +173,9 @@ class _RPUITaskState extends State<RPUITask> with CanSaveResult {
               child:
                   Text(RPLocalizations.of(context)?.translate('YES') ?? "YES"),
               onPressed: () {
-                // TODO: Store the result
+                // Calling the onCancel method with which the developer can for e.g. save the result on the device.
+                // Only call it if it's not null
+                widget.onCancel?.call(_taskResult);
                 // Popup dismiss
                 Navigator.of(context).pop();
                 // Exit the Ordered Task

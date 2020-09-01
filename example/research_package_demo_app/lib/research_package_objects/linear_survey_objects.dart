@@ -56,10 +56,12 @@ RPSliderAnswerFormat sliderAnswerFormat = RPSliderAnswerFormat.withParams(
 
 RPChoiceAnswerFormat joyfulActivitiesAnswerFormat =
     RPChoiceAnswerFormat.withParams(
-        ChoiceAnswerStyle.MultipleChoice, joyfulActivities);
+        ChoiceAnswerStyle.SingleChoice, joyfulActivities,
+        preselected: joyfulActivities);
 
 RPChoiceAnswerFormat instrumentsAnswerFormat = RPChoiceAnswerFormat.withParams(
-    ChoiceAnswerStyle.MultipleChoice, instruments);
+    ChoiceAnswerStyle.SingleChoice, instruments,
+    preselected: instruments);
 
 RPIntegerAnswerFormat weightIntegerAnswerFormat =
     RPIntegerAnswerFormat.withParams(0, 200, "KG");

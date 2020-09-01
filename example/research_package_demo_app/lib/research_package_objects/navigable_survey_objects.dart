@@ -65,7 +65,8 @@ RPChoiceAnswerFormat joyfulActivitiesAnswerFormat =
     RPChoiceAnswerFormat.withParams(
         ChoiceAnswerStyle.MultipleChoice, joyfulActivities);
 RPChoiceAnswerFormat instrumentsAnswerFormat = RPChoiceAnswerFormat.withParams(
-    ChoiceAnswerStyle.SingleChoice, instruments);
+    ChoiceAnswerStyle.SingleChoice, instruments,
+    preselected: [instruments.first]);
 RPIntegerAnswerFormat minutesIntegerAnswerFormat =
     RPIntegerAnswerFormat.withParams(0, 10000, "minutes");
 RPChoiceAnswerFormat guitarAnswerFormat = RPChoiceAnswerFormat.withParams(
@@ -109,9 +110,10 @@ RPQuestionStep multiChoiceQuestionStep = RPQuestionStep.withAnswerFormat(
 );
 
 RPQuestionStep instrumentChoiceQuestionStep = RPQuestionStep.withAnswerFormat(
-    "instrumentChoiceQuestionStepID",
-    "Which instrument are you playing?",
-    instrumentsAnswerFormat);
+  "instrumentChoiceQuestionStepID",
+  "Which instrument are you playing?",
+  instrumentsAnswerFormat,
+);
 RPQuestionStep minutesQuestionStep = RPQuestionStep.withAnswerFormat(
     "minutesQuestionStepID",
     "How many minutes do you spend practicing a week?",

@@ -18,7 +18,7 @@ class _RPUIChoiceQuestionBodyState extends State<RPUIChoiceQuestionBody>
 
   @override
   void initState() {
-    selectedChoices = [];
+    selectedChoices = widget._answerFormat.preselected ?? [];
     super.initState();
   }
 
@@ -144,11 +144,10 @@ class _ChoiceButtonState extends State<_ChoiceButton> {
                         onChanged: (newText) => choice.text = newText,
                         decoration: InputDecoration(
                             border: InputBorder.none,
-        focusedBorder: InputBorder.none,
-        enabledBorder: InputBorder.none,
-        errorBorder: InputBorder.none,
-        disabledBorder: InputBorder.none,
- 
+                            focusedBorder: InputBorder.none,
+                            enabledBorder: InputBorder.none,
+                            errorBorder: InputBorder.none,
+                            disabledBorder: InputBorder.none,
                             hintText:
                                 RPLocalizations.of(context).translate("Other")),
                       ),

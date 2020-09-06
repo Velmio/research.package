@@ -6,15 +6,18 @@ class RPIntegerAnswerFormat extends RPAnswerFormat {
   int _minValue;
   int _maxValue;
   String _suffix;
+  int _preset;
 
   RPIntegerAnswerFormat();
 
-  RPIntegerAnswerFormat.withParams(this._minValue, this._maxValue, [this._suffix]);
+  RPIntegerAnswerFormat.withParams(this._minValue, this._maxValue,
+      [this._suffix, this._preset]);
 
   @override
   get questionType {
     return QuestionType.Integer;
   }
+
   /// The maximum value of the range. The participant can not proceed if the number is outside the range.
   int get maxValue => _maxValue;
 
@@ -24,6 +27,12 @@ class RPIntegerAnswerFormat extends RPAnswerFormat {
   /// The text to show after the input field. If '''null''' then no text is shown.
   String get suffix => _suffix;
 
+  int get presetValue => _preset;
+
+  set presetValue(int preSet) {
+    this._preset = preSet;
+  }
+
   set maxValue(int maxValue) {
     this._maxValue = maxValue;
   }
@@ -32,6 +41,7 @@ class RPIntegerAnswerFormat extends RPAnswerFormat {
     this._minValue = minValue;
   }
 
-  factory RPIntegerAnswerFormat.fromJson(Map<String, dynamic> json) => _$RPIntegerAnswerFormatFromJson(json);
+  factory RPIntegerAnswerFormat.fromJson(Map<String, dynamic> json) =>
+      _$RPIntegerAnswerFormatFromJson(json);
   Map<String, dynamic> toJson() => _$RPIntegerAnswerFormatToJson(this);
 }

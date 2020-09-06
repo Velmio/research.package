@@ -21,6 +21,10 @@ class _RPUIIntegerQuestionBodyState extends State<RPUIIntegerQuestionBody>
   void initState() {
     _textEditingController = TextEditingController();
     _valid = true;
+    if (widget.answerFormat.presetValue != null) {
+      _textEditingController.value =
+          TextEditingValue(text: widget.answerFormat.presetValue.toString());
+    }
     super.initState();
   }
 

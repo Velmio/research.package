@@ -64,7 +64,7 @@ RPChoiceAnswerFormat instrumentsAnswerFormat = RPChoiceAnswerFormat.withParams(
     preselected: instruments);
 
 RPIntegerAnswerFormat weightIntegerAnswerFormat =
-    RPIntegerAnswerFormat.withParams(0, 200, "KG");
+    RPIntegerAnswerFormat.withParams(0, 200, "KG", 40);
 
 RPBooleanAnswerFormat smokingBooleanAnswerFormat =
     RPBooleanAnswerFormat.withParams("Yes, absolutely", "No, never");
@@ -151,6 +151,7 @@ RPInstructionStep instructionStep = RPInstructionStep(
 RPOrderedTask linearSurveyTask = RPOrderedTask(
   "surveyTaskID",
   [
+    weightQuestionStep,
     instructionStep,
     formStep,
     smokingQuestionStep,
@@ -161,7 +162,6 @@ RPOrderedTask linearSurveyTask = RPOrderedTask(
     imageChoiceQuestionStep,
     singleChoiceQuestionStep,
     happinessChoiceQuestionStep,
-    weightQuestionStep,
     completionStep
   ],
 );

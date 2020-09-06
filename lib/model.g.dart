@@ -83,7 +83,8 @@ RPIntegerAnswerFormat _$RPIntegerAnswerFormatFromJson(
     ..questionType =
         _$enumDecodeNullable(_$QuestionTypeEnumMap, json['question_type'])
     ..maxValue = json['max_value'] as int
-    ..minValue = json['min_value'] as int;
+    ..minValue = json['min_value'] as int
+    ..presetValue = json['preset_value'] as int;
 }
 
 Map<String, dynamic> _$RPIntegerAnswerFormatToJson(
@@ -99,6 +100,7 @@ Map<String, dynamic> _$RPIntegerAnswerFormatToJson(
   writeNotNull('question_type', _$QuestionTypeEnumMap[instance.questionType]);
   writeNotNull('max_value', instance.maxValue);
   writeNotNull('min_value', instance.minValue);
+  writeNotNull('preset_value', instance.presetValue);
   return val;
 }
 
@@ -108,6 +110,10 @@ RPChoiceAnswerFormat _$RPChoiceAnswerFormatFromJson(Map<String, dynamic> json) {
         _$enumDecodeNullable(_$QuestionTypeEnumMap, json['question_type'])
     ..answerStyle =
         _$enumDecodeNullable(_$ChoiceAnswerStyleEnumMap, json['answer_style'])
+    ..preselected = (json['preselected'] as List)
+        ?.map((e) =>
+            e == null ? null : RPChoice.fromJson(e as Map<String, dynamic>))
+        ?.toList()
     ..choices = json['choices'];
 }
 
@@ -124,6 +130,7 @@ Map<String, dynamic> _$RPChoiceAnswerFormatToJson(
   writeNotNull('question_type', _$QuestionTypeEnumMap[instance.questionType]);
   writeNotNull(
       'answer_style', _$ChoiceAnswerStyleEnumMap[instance.answerStyle]);
+  writeNotNull('preselected', instance.preselected);
   writeNotNull('choices', instance.choices);
   return val;
 }

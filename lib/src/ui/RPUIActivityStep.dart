@@ -12,7 +12,8 @@ class RPUIActivityStep extends StatefulWidget {
   _RPUIActivityStepState createState() => _RPUIActivityStepState();
 }
 
-class _RPUIActivityStepState extends State<RPUIActivityStep> with CanSaveResult {
+class _RPUIActivityStepState extends State<RPUIActivityStep>
+    with CanSaveResult {
   // Dynamic because as the type of result will have can vary
   dynamic _currentActivityBodyResult;
   bool readyToProceed;
@@ -53,28 +54,29 @@ class _RPUIActivityStepState extends State<RPUIActivityStep> with CanSaveResult 
         return RPUITappingActivityBody(activityStep, eventLogger, (result) {
           this.currentActivityBodyResult = result;
         });
-      case RPLetterTappingActivity:
-        return RPUILetterTappingActivityBody(activityStep, eventLogger, (result) {
-          this.currentActivityBodyResult = result;
-        });
       case RPReactionTimeActivity:
-        return RPUIReactionTimeActivityBody(activityStep, eventLogger, (result) {
+        return RPUIReactionTimeActivityBody(activityStep, eventLogger,
+            (result) {
           this.currentActivityBodyResult = result;
         });
       case RPRapidVisualInfoProcessingActivity:
-        return RPUIRapidVisualInfoProcessingActivityBody(activityStep, eventLogger, (result) {
+        return RPUIRapidVisualInfoProcessingActivityBody(
+            activityStep, eventLogger, (result) {
           this.currentActivityBodyResult = result;
         });
       case RPPairedAssociatesLearningActivity:
-        return RPUIPairedAssociatesLearningActivityBody(activityStep, eventLogger, (result) {
+        return RPUIPairedAssociatesLearningActivityBody(
+            activityStep, eventLogger, (result) {
           this.currentActivityBodyResult = result;
         });
       case RPCorsiBlockTappingActivity:
-        return RPUICorsiBlockTappingActivityBody(activityStep, eventLogger, (result) {
+        return RPUICorsiBlockTappingActivityBody(activityStep, eventLogger,
+            (result) {
           this.currentActivityBodyResult = result;
         });
       case RPStroopEffectActivity:
-        return RPUIStroopEffectActivityBody(activityStep, eventLogger, (result) {
+        return RPUIStroopEffectActivityBody(activityStep, eventLogger,
+            (result) {
           this.currentActivityBodyResult = result;
         });
       default:

@@ -24,7 +24,6 @@ import 'package:research_package/model.dart';
 //Local Imports
 import 'research_package.dart';
 import 'src/ui/custom_card.dart';
-import 'src/ui/velmio_material_color.dart';
 import 'keyboard_hider.dart';
 
 // Library elements

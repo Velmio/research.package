@@ -45,7 +45,6 @@ part 'src/ui/QuestionBody/RPUISliderQuestionBody.dart';
 part 'src/ui/RPStyles.dart';
 part 'src/ui/RPUIActivityStep.dart';
 part 'src/ui/RPUICompletionStep.dart';
-part 'src/ui/RPUIConsentReviewStep.dart';
 part 'src/ui/RPUIFormStep.dart';
 part 'src/ui/RPUIInstructionStep.dart';
 part 'src/ui/RPUIQuestionStep.dart';

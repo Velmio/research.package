@@ -40,7 +40,6 @@ part 'src/model/consent/RPConsentDocument.dart';
 part 'src/model/consent/RPConsentSection.dart';
 part 'src/model/consent/RPConsentSignature.dart';
 part 'src/model/consent/RPVisualConsentStep.dart';
-part 'src/model/consent/RPConsentReviewStep.dart';
 
 part 'src/model/step/RPStep.dart';
 part 'src/model/step/RPFormStep.dart';

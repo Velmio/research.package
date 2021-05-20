@@ -9,7 +9,8 @@ class RPOrderedTask extends RPTask {
   int _numberOfQuestionSteps;
   bool _isConsentTask;
 
-  RPOrderedTask(String identifier, this._steps, {bool closeAfterFinished = true})
+  RPOrderedTask(String identifier, this._steps,
+      {bool closeAfterFinished = true})
       : super(identifier, closeAfterFinished: closeAfterFinished) {
     this._numberOfQuestionSteps = 0;
     this._isConsentTask = false;
@@ -18,9 +19,6 @@ class RPOrderedTask extends RPTask {
       // Counting the Question or FormStep items
       if (step is RPQuestionStep) this._numberOfQuestionSteps++;
       // If there's a Consent Review Step among the steps it means the task is a Consent Task
-      if (step.runtimeType == RPConsentReviewStep) {
-        _isConsentTask = true;
-      }
     });
   }
 

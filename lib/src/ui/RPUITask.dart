@@ -362,9 +362,6 @@ class _RPUITaskState extends State<RPUITask> with CanSaveResult {
         case RPVisualConsentStep:
           return null;
           break;
-        case RPConsentReviewStep:
-          return null;
-          break;
         default:
           return <Widget>[
             Row(

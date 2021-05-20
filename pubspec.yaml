@@ -1,6 +1,6 @@
 name: research_package
 description: A Flutter framework for obtaining informed consent, showing surveys and collecting results.
-version: 0.4.1+1
+version: 0.4.2+1
 homepage: https://github.com/cph-cachet/research.package
 
 environment:
@@ -21,7 +21,6 @@ dev_dependencies:
     sdk: flutter
   build_runner: ^2.0.3
   json_serializable: ^4.1.2
-  test: ^1.16.8
 
 # For information on the generic Dart part of this file, see the
 # following page: https://www.dartlang.org/tools/pub/pubspec
@@ -29,54 +28,54 @@ dev_dependencies:
 # The following section is specific to Flutter.
 flutter:
   # To add assets to your package, add an assets section, like this:
-  assets:
-    #mp files for letter A tapping test
-    - packages/research_package/assets/sounds/A.mp3
-    - packages/research_package/assets/sounds/B.mp3
-    - packages/research_package/assets/sounds/C.mp3
-    - packages/research_package/assets/sounds/D.mp3
-    - packages/research_package/assets/sounds/E.mp3
-    - packages/research_package/assets/sounds/F.mp3
-    - packages/research_package/assets/sounds/G.mp3
-    - packages/research_package/assets/sounds/H.mp3
-    - packages/research_package/assets/sounds/I.mp3
-    - packages/research_package/assets/sounds/J.mp3
-    - packages/research_package/assets/sounds/K.mp3
-    - packages/research_package/assets/sounds/L.mp3
-    - packages/research_package/assets/sounds/M.mp3
-    - packages/research_package/assets/sounds/N.mp3
-    - packages/research_package/assets/sounds/O.mp3
-    - packages/research_package/assets/sounds/P.mp3
-    - packages/research_package/assets/sounds/Q.mp3
-    - packages/research_package/assets/sounds/R.mp3
-    - packages/research_package/assets/sounds/S.mp3
-    - packages/research_package/assets/sounds/T.mp3
-    - packages/research_package/assets/sounds/U.mp3
-    - packages/research_package/assets/sounds/V.mp3
-    - packages/research_package/assets/sounds/W.mp3
-    - packages/research_package/assets/sounds/X.mp3
-    - packages/research_package/assets/sounds/Y.mp3
-    - packages/research_package/assets/sounds/Z.mp3
+  # assets:
+  #   #mp files for letter A tapping test
+  #   - packages/research_package/assets/sounds/A.mp3
+  #   - packages/research_package/assets/sounds/B.mp3
+  #   - packages/research_package/assets/sounds/C.mp3
+  #   - packages/research_package/assets/sounds/D.mp3
+  #   - packages/research_package/assets/sounds/E.mp3
+  #   - packages/research_package/assets/sounds/F.mp3
+  #   - packages/research_package/assets/sounds/G.mp3
+  #   - packages/research_package/assets/sounds/H.mp3
+  #   - packages/research_package/assets/sounds/I.mp3
+  #   - packages/research_package/assets/sounds/J.mp3
+  #   - packages/research_package/assets/sounds/K.mp3
+  #   - packages/research_package/assets/sounds/L.mp3
+  #   - packages/research_package/assets/sounds/M.mp3
+  #   - packages/research_package/assets/sounds/N.mp3
+  #   - packages/research_package/assets/sounds/O.mp3
+  #   - packages/research_package/assets/sounds/P.mp3
+  #   - packages/research_package/assets/sounds/Q.mp3
+  #   - packages/research_package/assets/sounds/R.mp3
+  #   - packages/research_package/assets/sounds/S.mp3
+  #   - packages/research_package/assets/sounds/T.mp3
+  #   - packages/research_package/assets/sounds/U.mp3
+  #   - packages/research_package/assets/sounds/V.mp3
+  #   - packages/research_package/assets/sounds/W.mp3
+  #   - packages/research_package/assets/sounds/X.mp3
+  #   - packages/research_package/assets/sounds/Y.mp3
+  #   - packages/research_package/assets/sounds/Z.mp3
 
-    # Test image assets for PAL
-    - packages/research_package/assets/images/nothing.png
-    - packages/research_package/assets/images/hidden.png
-    - packages/research_package/assets/images/shape1.png
-    - packages/research_package/assets/images/shape2.png
-    - packages/research_package/assets/images/shape3.png
-    - packages/research_package/assets/images/shape4.png
-    - packages/research_package/assets/images/shape5.png
+  #   # Test image assets for PAL
+  #   - packages/research_package/assets/images/nothing.png
+  #   - packages/research_package/assets/images/hidden.png
+  #   - packages/research_package/assets/images/shape1.png
+  #   - packages/research_package/assets/images/shape2.png
+  #   - packages/research_package/assets/images/shape3.png
+  #   - packages/research_package/assets/images/shape4.png
+  #   - packages/research_package/assets/images/shape5.png
 
-    # Test intro images
-    - packages/research_package/assets/images/PALintro.png
-    - packages/research_package/assets/images/Corsiintro.png
-    - packages/research_package/assets/images/Reactionintro.png
-    - packages/research_package/assets/images/RVIPintro.png
-    - packages/research_package/assets/images/Stroopintro.png
-    - packages/research_package/assets/images/Tappingintro.png
-    - packages/research_package/assets/images/trailtype-a.png
-    - packages/research_package/assets/images/trailtype-b.png
-    - packages/research_package/assets/images/Letterintro.png
+  #   # Test intro images
+  #   - packages/research_package/assets/images/PALintro.png
+  #   - packages/research_package/assets/images/Corsiintro.png
+  #   - packages/research_package/assets/images/Reactionintro.png
+  #   - packages/research_package/assets/images/RVIPintro.png
+  #   - packages/research_package/assets/images/Stroopintro.png
+  #   - packages/research_package/assets/images/Tappingintro.png
+  #   - packages/research_package/assets/images/trailtype-a.png
+  #   - packages/research_package/assets/images/trailtype-b.png
+  #   - packages/research_package/assets/images/Letterintro.png
   #  - images/a_dot_ham.jpeg
   #
   # For details regarding assets in packages, see

@@ -29,13 +29,6 @@ import 'keyboard_hider.dart';
 // Library elements
 part 'src/localization/RPLocalization.dart';
 part 'src/loggers/RPActivityEventLogger.dart';
-part 'src/ui/ActivityBody/RPUICorsiBlockTappingActivityBody.dart';
-part 'src/ui/ActivityBody/RPUIPairedAssociatesLearningActivityBody.dart';
-part 'src/ui/ActivityBody/RPUIRapidVisualInfoProcessingActivityBody.dart';
-part 'src/ui/ActivityBody/RPUIReactionTimeActivityBody.dart';
-part 'src/ui/ActivityBody/RPUIStroopEffectActivityBody.dart';
-part 'src/ui/ActivityBody/RPUITappingActivityBody.dart';
-part 'src/ui/ActivityBody/RPUITrailMakingActivityBody.dart';
 part 'src/ui/QuestionBody/RPUIBooleanQuestionBody.dart';
 part 'src/ui/QuestionBody/RPUIChoiceQuestionBody.dart';
 part 'src/ui/QuestionBody/RPUIDateTimeQuestionBody.dart';
@@ -49,5 +42,4 @@ part 'src/ui/RPUIFormStep.dart';
 part 'src/ui/RPUIInstructionStep.dart';
 part 'src/ui/RPUIQuestionStep.dart';
 part 'src/ui/RPUITask.dart';
-
 part 'src/ui/RPUIVisualConsentStep.dart';

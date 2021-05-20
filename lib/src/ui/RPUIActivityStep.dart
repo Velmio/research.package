@@ -46,39 +46,6 @@ class _RPUIActivityStepState extends State<RPUIActivityStep>
   // Returning the according step body widget based on the runtimeType of the step
   Widget stepBody(RPActivityStep activityStep) {
     switch (activityStep.runtimeType) {
-      case RPTrailMakingActivity:
-        return RPUITrailMakingActivityBody(activityStep, eventLogger, (result) {
-          this.currentActivityBodyResult = result;
-        });
-      case RPTappingActivity:
-        return RPUITappingActivityBody(activityStep, eventLogger, (result) {
-          this.currentActivityBodyResult = result;
-        });
-      case RPReactionTimeActivity:
-        return RPUIReactionTimeActivityBody(activityStep, eventLogger,
-            (result) {
-          this.currentActivityBodyResult = result;
-        });
-      case RPRapidVisualInfoProcessingActivity:
-        return RPUIRapidVisualInfoProcessingActivityBody(
-            activityStep, eventLogger, (result) {
-          this.currentActivityBodyResult = result;
-        });
-      case RPPairedAssociatesLearningActivity:
-        return RPUIPairedAssociatesLearningActivityBody(
-            activityStep, eventLogger, (result) {
-          this.currentActivityBodyResult = result;
-        });
-      case RPCorsiBlockTappingActivity:
-        return RPUICorsiBlockTappingActivityBody(activityStep, eventLogger,
-            (result) {
-          this.currentActivityBodyResult = result;
-        });
-      case RPStroopEffectActivity:
-        return RPUIStroopEffectActivityBody(activityStep, eventLogger,
-            (result) {
-          this.currentActivityBodyResult = result;
-        });
       default:
         return Container();
     }

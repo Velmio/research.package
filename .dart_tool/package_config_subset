@@ -10,10 +10,6 @@ analyzer
 2.12
 file:///Users/tikhomirovi/flutter/.pub-cache/hosted/pub.dartlang.org/analyzer-1.5.0/
 file:///Users/tikhomirovi/flutter/.pub-cache/hosted/pub.dartlang.org/analyzer-1.5.0/lib/
-archive
-2.12
-file:///Users/tikhomirovi/flutter/.pub-cache/hosted/pub.dartlang.org/archive-3.1.2/
-file:///Users/tikhomirovi/flutter/.pub-cache/hosted/pub.dartlang.org/archive-3.1.2/lib/
 args
 2.12
 file:///Users/tikhomirovi/flutter/.pub-cache/hosted/pub.dartlang.org/args-2.1.0/
@@ -130,10 +126,6 @@ http_parser
 2.12
 file:///Users/tikhomirovi/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-4.0.0/
 file:///Users/tikhomirovi/flutter/.pub-cache/hosted/pub.dartlang.org/http_parser-4.0.0/lib/
-image
-2.12
-file:///Users/tikhomirovi/flutter/.pub-cache/hosted/pub.dartlang.org/image-3.0.2/
-file:///Users/tikhomirovi/flutter/.pub-cache/hosted/pub.dartlang.org/image-3.0.2/lib/
 intl
 2.12
 file:///Users/tikhomirovi/flutter/.pub-cache/hosted/pub.dartlang.org/intl-0.17.0/
@@ -182,10 +174,6 @@ pedantic
 2.12
 file:///Users/tikhomirovi/flutter/.pub-cache/hosted/pub.dartlang.org/pedantic-1.11.0/
 file:///Users/tikhomirovi/flutter/.pub-cache/hosted/pub.dartlang.org/pedantic-1.11.0/lib/
-petitparser
-2.12
-file:///Users/tikhomirovi/flutter/.pub-cache/hosted/pub.dartlang.org/petitparser-4.1.0/
-file:///Users/tikhomirovi/flutter/.pub-cache/hosted/pub.dartlang.org/petitparser-4.1.0/lib/
 pool
 2.12
 file:///Users/tikhomirovi/flutter/.pub-cache/hosted/pub.dartlang.org/pool-1.5.0/
@@ -210,10 +198,6 @@ shelf_web_socket
 2.12
 file:///Users/tikhomirovi/flutter/.pub-cache/hosted/pub.dartlang.org/shelf_web_socket-1.0.1/
 file:///Users/tikhomirovi/flutter/.pub-cache/hosted/pub.dartlang.org/shelf_web_socket-1.0.1/lib/
-signature
-2.12
-file:///Users/tikhomirovi/flutter/.pub-cache/hosted/pub.dartlang.org/signature-4.1.1/
-file:///Users/tikhomirovi/flutter/.pub-cache/hosted/pub.dartlang.org/signature-4.1.1/lib/
 source_gen
 2.12
 file:///Users/tikhomirovi/flutter/.pub-cache/hosted/pub.dartlang.org/source_gen-1.0.0/
@@ -266,10 +250,6 @@ web_socket_channel
 2.12
 file:///Users/tikhomirovi/flutter/.pub-cache/hosted/pub.dartlang.org/web_socket_channel-2.1.0/
 file:///Users/tikhomirovi/flutter/.pub-cache/hosted/pub.dartlang.org/web_socket_channel-2.1.0/lib/
-xml
-2.12
-file:///Users/tikhomirovi/flutter/.pub-cache/hosted/pub.dartlang.org/xml-5.1.0/
-file:///Users/tikhomirovi/flutter/.pub-cache/hosted/pub.dartlang.org/xml-5.1.0/lib/
 yaml
 2.12
 file:///Users/tikhomirovi/flutter/.pub-cache/hosted/pub.dartlang.org/yaml-3.1.0/
